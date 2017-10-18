@@ -1,0 +1,2 @@
+# dinner-decider
+small app
