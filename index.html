@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What to eat?</title>
+
+    <link rel="stylesheet" href="build/dinner.css">
+</head>
+
+<body>
+    <section class="center" id="selection">
+        <h1>What types of food do you usually have?</h1>
+
+        <div class="wrapper">
+            <label onclick="select(this, 'Jpn')" for="Japanese" id="jpn">
+                <input type="checkbox" name="jpn">
+                <h2>Japanese</h2>
+
+                <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Dinner-decider" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="iPhone-7-Copy-4" transform="translate(-90.000000, -274.000000)">
+                            <g id="Group-2" transform="translate(90.000000, 274.000000)">
+                                <circle id="Oval" fill="#FFFFFF" cx="15" cy="15" r="15"></circle>
+                                <g id="Group" transform="translate(7.000000, 12.000000)" stroke="#2196F3" stroke-width="2" stroke-linecap="square">
+                                    <path d="M6.5,11.5 L15.5,0.5" id="Line-2"></path>
+                                    <path d="M0.5,4.5 L6.5,11.5" id="Line"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+
+            <label onclick="select(this, 'Chi')" for="Chinese">
+                <input type="checkbox" name="chi">
+                <h2>Chinese</h2>
+                <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Dinner-decider" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="iPhone-7-Copy-4" transform="translate(-90.000000, -274.000000)">
+                            <g id="Group-2" transform="translate(90.000000, 274.000000)">
+                                <circle id="Oval" fill="#FFFFFF" cx="15" cy="15" r="15"></circle>
+                                <g id="Group" transform="translate(7.000000, 12.000000)" stroke="#2196F3" stroke-width="2" stroke-linecap="square">
+                                    <path d="M6.5,11.5 L15.5,0.5" id="Line-2"></path>
+                                    <path d="M0.5,4.5 L6.5,11.5" id="Line"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+
+            <label onclick="select(this, 'Kor')" for="Korean">
+                <input type="checkbox" name="kor">
+                <h2>Korean</h2>
+                <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Dinner-decider" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="iPhone-7-Copy-4" transform="translate(-90.000000, -274.000000)">
+                            <g id="Group-2" transform="translate(90.000000, 274.000000)">
+                                <circle id="Oval" fill="#FFFFFF" cx="15" cy="15" r="15"></circle>
+                                <g id="Group" transform="translate(7.000000, 12.000000)" stroke="#2196F3" stroke-width="2" stroke-linecap="square">
+                                    <path d="M6.5,11.5 L15.5,0.5" id="Line-2"></path>
+                                    <path d="M0.5,4.5 L6.5,11.5" id="Line"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+
+        </div>
+       <button class="next" id="next1" onclick="showResult()" >Next</button>
+       
+
+
+    </section>
+
+    <section class="center result" id="result">
+            <h1 id="whatToEat"></h1>
+            <button class="yOn">No good?</button>
+    </section> 
+
+
+    <script src="dinner_decider.js"></script>
+</body>
