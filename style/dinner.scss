@@ -25,6 +25,10 @@
             color: #626262;
             padding-bottom: 56px;
         }
+        .btnPack {
+            display: flex;
+            justify-content: center;
+        }
         .btn {
             width: 200px;
             height: 50px;
@@ -36,6 +40,7 @@
         }
         .yes {
             /* Rectangle: */
+         
             background: #FFFFFF;
             border: 1px solid #979797;
             border-radius: 10px 0 0 10px;
@@ -47,8 +52,24 @@
             letter-spacing: 0;
             outline: none;
       
+      
         }
+        .yes:hover {
+            background: #2196f3;
+            color: #fff;
+            border: 1px solid #2196f3;
+
+        }
+
+        .no:hover {
+            background: #2196f3;
+            color: #fff;
+            border: 1px solid #2196f3;
+
+        }
+
         .no {
+    
             background: #e5e5e5;
             border: 1px solid #979797;
             border-radius: 0 10px 10px 0;
@@ -59,18 +80,21 @@
             color: #626262;
             letter-spacing: 0;
             outline: none;
-
-        }
+ 
 
         }
         .btnActive {
             background-color: #97C1FF;
         }
+
+        }
+
         .wrapper {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             padding-bottom: 50px;
+        
             label {
                 position: relative;
                 display: flex;

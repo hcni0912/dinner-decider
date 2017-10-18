@@ -1,5 +1,5 @@
 var sel, dinnerList;
-
+var arr = [];
 sel = 0;
 dinnerList = {
     Japanese: false,
@@ -73,7 +73,7 @@ function select(el, type) {
 
 var showResult = function() {
     var x;
-    var arr = [];
+
     for (x in dinnerList) {
         if (dinnerList[x] === true) {
             arr.push(x);
@@ -92,4 +92,20 @@ var showResult = function() {
 
 }
 
+var z = 0;
+
+function clickN() {
+    var x = 1;
+    return function () {
+        
+        document.getElementById('whatToEat').innerHTML = 'How about having ' + arr[x] + ' food for dinner?';
+        x++;
+        if (x >= arr.length) {
+            x = 0;
+        }
+
+    }
+}
+
+var clickNo = clickN();
 
