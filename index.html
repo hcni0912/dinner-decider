@@ -8,6 +8,7 @@
     <title>What to eat?</title>
 
     <link rel="stylesheet" href="build/dinner.css">
+    
 </head>
 
 <body>
@@ -89,13 +90,15 @@
     <section class="center result" id="result">
             <h1 id="whatToEat"></h1>
             <div class="btnPack">
-                <button class="yes" onclick="clickYes()">Yes</button>
+                <button class="yes" onclick="initialize()">Yes</button>
                 <button class="no" onclick="clickNo()">No</button>
             </div>
             
          
     </section> 
+    <div id="map"></div>
 
 
     <script src="dinner_decider.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9Y-mNt4IXevfB31xX3ifazI8v40KvAiQ&libraries=places"></script>
 </body>
