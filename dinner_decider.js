@@ -1,6 +1,7 @@
 var sel, dinnerList;
 var arr = [];
-sel = 0;
+var want,
+    sel = 0;
 dinnerList = {
     Japanese: false,
     Chinese: false,
@@ -87,7 +88,7 @@ var showResult = function () {
     arr.sort(function (a, b) {
         return 0.5 - Math.random()
     });
-
+    want = arr[0];
     document.getElementById('whatToEat').innerHTML = 'How about having ' + arr[0] + ' food for dinner?';
 
 }
@@ -99,6 +100,7 @@ function clickN() {
     return function () {
 
         document.getElementById('whatToEat').innerHTML = 'How about having ' + arr[x] + ' food for dinner?';
+        want = arr[x];
         x++;
         if (x >= arr.length) {
             x = 0;
@@ -109,38 +111,74 @@ function clickN() {
 
 var clickNo = clickN();
 
+
+
+
+function setResult(result) {
+    
+    
+          request.location = result.geometry.location;
+      
+          request.radius = '500';
+          request.type = 'restaurant';
+          map.setCenter(request.location);
+
+          service = new google.maps.places.PlacesService(map);
+          service.textSearch(request, callback);
+          console.log(result.geometry.location);
+          
+    }
+
+function getLatitudeLongitude(callback2, address) {
+    // If adress is not supplied, use default value 'Ferrol, Galicia, Spain'
+    address = address || 'Ferrol, Galicia, Spain';
+    // Initialize the Geocoder
+    geocoder = new google.maps.Geocoder();
+    if (geocoder) {
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                callback2(results[0]);
+                console.log('2');
+            }
+        });
+    }
+}
+
+
+
 var map;
 var service;
 var infowindow;
+var pyrmont;
+var request = {};
 
 function initialize() {
-  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+    pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+  
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 15
+      });
+      infowindow = new google.maps.InfoWindow();
+  
 
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
-    });
-
-  var request = {
-    location: pyrmont,
-    radius: '500',
-    query: 'restaurant'
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
-}
-
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      createMarker(results[i]);
-    }
   }
+  
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        createMarker(results[i]);
+      }
+      console.log(results);
+    }
+    console.log('4');
 }
 
 function createMarker(place) {
+    console.log(place);
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
@@ -153,14 +191,10 @@ function createMarker(place) {
     });
   }
 
-var search = function() {
-    var request = {
-        location: pyrmont,
-        radius: '500',
-        query: 'restaurant'
-      };
-    
-
-    service.textSearch(request, callback);
-
-};
+  var button = document.getElementById('go');
+  
+  button.addEventListener("click", function () {
+      var address = document.getElementById('address').value;
+      getLatitudeLongitude(setResult, address)
+      console.log('3');
+  });
