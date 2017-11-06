@@ -89,7 +89,7 @@ var showResult = function () {
         return 0.5 - Math.random()
     });
     want = arr[0];
-    document.getElementById('whatToEat').innerHTML = 'How about having ' + arr[0] + ' food for dinner?';
+    document.getElementById('whatToEat').innerHTML = 'How about having ' + '<span>' + arr[0] + '</span>' + ' food for dinner?';
 
 }
 
@@ -99,7 +99,7 @@ function clickN() {
     var x = 1;
     return function () {
 
-        document.getElementById('whatToEat').innerHTML = 'How about having ' + arr[x] + ' food for dinner?';
+        document.getElementById('whatToEat').innerHTML = 'How about having ' + '<span>' + arr[x] + '</span>' + ' food for dinner?';
         want = arr[x];
         x++;
         if (x >= arr.length) {
@@ -120,7 +120,7 @@ function setResult(result) {
           request.location = result.geometry.location;
       
           request.radius = '500';
-          request.type = 'restaurant';
+          request.query = want + 'restaurant';
           map.setCenter(request.location);
 
           service = new google.maps.places.PlacesService(map);
@@ -155,6 +155,8 @@ var pyrmont;
 var request = {};
 
 function initialize() {
+    document.querySelector('.hide').classList.toggle("hide");
+    
     pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
   
     map = new google.maps.Map(document.getElementById('map'), {

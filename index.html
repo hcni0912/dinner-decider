@@ -8,7 +8,7 @@
     <title>What to eat?</title>
 
     <link rel="stylesheet" href="build/dinner.css">
-    
+
 </head>
 
 <body>
@@ -81,22 +81,25 @@
             </label>
 
         </div>
-       <button class="btn" id="next1" onclick="showResult()" >Next</button>
-       
+        <button class="btn" id="next1" onclick="showResult()">Next</button>
+
 
 
     </section>
 
     <section class="center result" id="result">
-            <h1 id="whatToEat"></h1>
-            <div class="btnPack">
-                <button class="yes" onclick="initialize()">Yes</button>
-                <button class="no" onclick="clickNo()">No</button>
-            </div>
+        <h1 id="whatToEat"></h1>
+        <div class="btnPack">
+            <button class="yes" onclick="initialize()">Yes</button>
+            <button class="no" onclick="clickNo()">No</button>
+        </div>
+        <div class="hide">
             <input id="address" class="addressField" type="textbox" placeholder="Where?">
             <button class="go" id="go">Go</button>
-         
-    </section> 
+        </div>
+
+
+    </section>
 
     <div id="map"></div>
 

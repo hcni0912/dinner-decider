@@ -14,8 +14,11 @@
     #map {
         height: 300px;
       }
+    .hide {
+        display: none;
+    }
     .addressField {
-        border: 1px solid #e7e7e7;
+        border: 1px solid #979797;
         width: 200px;
         background-color: #fff;
         color: inherit;
@@ -39,6 +42,11 @@
     }
     .result {
         display: none;
+        h1 {
+            span {
+                color: #2196F3;
+            }
+        }
     }
     .center {
         margin: auto;
